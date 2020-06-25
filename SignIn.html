@@ -1,0 +1,30 @@
+<html>
+
+	<head>
+		<title> Sign In </title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+    <body>
+		<div>
+            <button onclick="home()"> Home </button>
+            <h2> Sign In </h2> 
+            <form>
+                <input type="text" class="in-field" placeholder="Username"></br>
+                <input type="password" class="in-field" placeholder="Password"> </br>
+            </form>
+            <button onclick="login()"> Sign In </button> 
+            <a href="fPassword.html"> Forgot pasword </a>
+        </div>
+	</body>
+
+    <script>
+        function login()
+        {
+            location.replace("Success.html")
+        }
+        function home() {
+            location.replace("Index.html")
+        }
+    </script>
+</html>

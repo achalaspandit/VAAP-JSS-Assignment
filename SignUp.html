@@ -1,0 +1,59 @@
+<html>
+
+	<head>
+		<title> Sign Up </title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div>
+            <button onclick="home()"> Home </button>
+            <h2> Sign Up </h2> 
+            <form id="su">
+                <input type="text" class="in-field" placeholder="Full Name"> </br>
+                <input type="text" class="in-field" placeholder="Email ID"> </br>
+                <input type="text" class="in-field" placeholder="Username"></br>
+                <input type="password" class="in-field" placeholder="Password - 6 characters(alphabets,numerics, -, _ or * )"> </br>
+                <input type="password" class="in-field" placeholder="Confirm Password "> </br>
+            </form>
+            <button onclick="validate()"> Sign Up </button>
+        </div>
+	</body>
+
+
+    <script>
+        function validate()
+        {
+            x = document.getElementById("su");
+            var patp = /[a-z0-9_-]{6,15}/
+            var pate = /[a-z0-9_][.][a-z][.com|.co.in|.edu]/
+            fname = x.elements[0].value;
+            email = x.elements[1].value;
+            usrn = x.elements[2].value;
+            pwd1 = x.elements[3].value;
+            pwd2 = x.elements[4].value;
+            if(fname.length<4)
+            {   
+                alert("Enter valid name");
+            }
+            else if(!(pate.test(email)))
+            {   
+                alert("Enter valid email");
+            }
+            else if(!(patp.test(pwd1)))
+            {   
+                alert("Password should be 6 characters long with alphabets, numerics, _ or -");
+            }
+            else if(pwd1 != pwd2)
+            {   
+                alert("Passwords do not match");
+            }
+            else
+            {
+                location.replace("Success.html")
+            }
+        }
+        function home() {
+            location.replace("Index.html")
+        }
+    </script>
+</html>
